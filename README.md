@@ -18,9 +18,11 @@ Or build the production bundles:
 pnpm build
 ```
 
-# PNPM troubleshooting
+# Lessons learned while building this POC
 
-## Installation
+## PNPM troubleshooting
+
+### Installation
 
 Installed pnpm using Powershell with `iwr https://get.pnpm.io/install.ps1 -useb | iex` but pnpm wasn't reconized in VSCode terminal.
 
@@ -28,19 +30,19 @@ Haven't try installing pnpm globally with npm, should try that next time.
 
 Meanwhile, I fixed it by copying `pnpm.exe` from `C:\Users\[USER]\AppData\Local\pnpm` to `C:\Program Files\nodejs`.
 
-# SWC issues
+## SWC issues
 
-## Shared browserslist config support
+### Shared browserslist config support
 
 SWC cannot load browserslist config from an external package. More info in the following [issue](https://github.com/swc-project/swc/issues/3365).
 
 It kind of makes sense before under the hood, SWC is using the [following package](https://github.com/browserslist/browserslist-rs#limitations) for browserslist support which as a limitation with external configuration package.
 
-## Cannot extends SWC config
+### Cannot extends SWC config
 
 There no way to extend an SWC config file at the moment: https://github.com/swc-project/swc/issues/5654
 
-## swc-loader options are not deeply merge
+### swc-loader options are not deeply merge
 
 Given
 
@@ -57,7 +59,7 @@ use: {
 
 The whole `env` section of the `.swcrc` file will be overriden instead of strictly overriding the `targets` prop.
 
-## React fast refresh
+### React fast refresh
 
 To make React fast refresh works when using `swc-loader`, Webpack must also be configured accordingly.
 
@@ -88,9 +90,9 @@ import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 }
 ```
 
-# ESM
+## ESM
 
-## Make TS and Webpack play well together
+### Make TS and Webpack play well together
 
 In `tsconfig.json`, set `"moduleResolution": "nodenext"`
 
