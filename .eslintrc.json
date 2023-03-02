@@ -1,0 +1,16 @@
+{
+    "root": true,
+    "extends": [
+        "plugin:@sharegate/core",
+        "plugin:@sharegate/typescript",
+        "plugin:@sharegate/react"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "env": {
+        // For webpack config.
+        "node": true
+    }
+}
