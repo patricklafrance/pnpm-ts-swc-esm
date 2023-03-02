@@ -1,4 +1,4 @@
-# Get Started
+# Getting Started
 
 To start using this repository, first install [PNPM](https://pnpm.io/), then install the dependencies:
 
