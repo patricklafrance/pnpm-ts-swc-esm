@@ -1,3 +1,23 @@
+# Get Started
+
+To start using this repository, first install [PNPM](https://pnpm.io/), then install the dependencies:
+
+```bash
+pnpm install
+```
+
+Start in dev mode with:
+
+```
+pnpm dev
+```
+
+Or build the production bundles:
+
+```
+pnpm build
+```
+
 # PNPM troubleshooting
 
 ## Installation
